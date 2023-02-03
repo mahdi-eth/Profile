@@ -5,8 +5,13 @@ import phoneSVG from "./assets/icons/phone.svg";
 import mailSVG from "./assets/icons/mail.svg";
 import webSVG from "./assets/icons/web.svg";
 import locSVG from "./assets/icons/loc.svg";
+import Modal from "./components/inputsModal";
 
 function App() {
+    // const openInputsModal = () => {
+
+    // }
+
     return (
         <div className="main-container line">
             <div className="sec-line">
@@ -53,9 +58,7 @@ function App() {
                                     </div>
                                 </div>
                             </div>
-                            <button className="my-inputs z-index">
-                                My Inputs
-                            </button>
+                            <Modal />
                         </div>
                     </div>
                 </div>
