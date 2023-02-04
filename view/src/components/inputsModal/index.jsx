@@ -1,5 +1,11 @@
 import { useState } from "react";
 import { HexColorPicker } from "react-colorful";
+import { Radio } from "pretty-checkbox-react";
+import profile1 from "../../assets/img/man1.webp";
+import profile2 from "../../assets/img/man2.webp";
+import profile3 from "../../assets/img/man3.webp";
+import profile4 from "../../assets/img/woman1.jpg";
+import profile5 from "../../assets/img/woman2.jpg";
 import "./index.css";
 
 const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
@@ -23,12 +29,9 @@ const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
         phoneNumber: "",
         email: "",
         website: "",
-        address: ""
+        address: "",
+        picture: ""
     });
-
-    const saveUser = () => {
-        console.log("save");
-    };
 
     return (
         <div
@@ -38,7 +41,7 @@ const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
             }>
             <div
                 className={
-                    "modal-container display-flex flex-coloumn align-items-center"
+                    "modal-container display-flex flex-coloumn"
                 }>
                 <p className="choose-prefers">Choose Your Prefers</p>
                 <div className="user-form-container display-flex flex-coloumn">
@@ -91,27 +94,71 @@ const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
                             name="Address"
                             type="text"
                         />
-                        <div className="display-flex">
-                            <figure>
+                        <div className="img-container display-flex">
+                            <figure className="display-flex">
                                 <img
-                                    className="first-profile z-index-6"
-                                    src={testProfile}
-                                    alt="firstIcon"
+                                    className="first-profile"
+                                    src={profile1}
+                                    alt="A picture of a person"
                                 />
-                                <Radio name="a" shape="round" color="primary" />
+                                <Radio
+                                    name="pic"
+                                    shape="round"
+                                    color="primary"
+                                />
                             </figure>
-                            <figure>
+                            <figure className="display-flex">
                                 <img
-                                    className="first-profile z-index-6"
-                                    src={test02Profile}
-                                    alt="firstIcon"
+                                    className="first-profile"
+                                    src={profile2}
+                                    alt="A picture of a person"
                                 />
-                                <Radio name="a" shape="round" color="primary" />
+                                <Radio
+                                    name="pic"
+                                    shape="round"
+                                    color="primary"
+                                />
+                            </figure>
+                            <figure className="display-flex">
+                                <img
+                                    className="first-profile"
+                                    src={profile3}
+                                    alt="A picture of a person"
+                                />
+                                <Radio
+                                    name="pic"
+                                    shape="round"
+                                    color="primary"
+                                />
+                            </figure>
+                            <figure className="display-flex">
+                                <img
+                                    className="first-profile"
+                                    src={profile4}
+                                    alt="A picture of a person"
+                                />
+                                <Radio
+                                    name="pic"
+                                    shape="round"
+                                    color="primary"
+                                />
+                            </figure>
+                            <figure className="display-flex">
+                                <img
+                                    className="first-profile"
+                                    src={profile5}
+                                    alt="A picture of a person"
+                                />
+                                <Radio
+                                    name="pic"
+                                    shape="round"
+                                    color="primary"
+                                />
                             </figure>
                         </div>
                     </form>
                     <button
-                        onClick={saveUser}
+                        onSubmit={() => fetch()}
                         style={{ background: theme }}
                         type="submit"
                         className="save-btn">

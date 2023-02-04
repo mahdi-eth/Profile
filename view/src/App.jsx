@@ -11,8 +11,6 @@ function App() {
     const [showModal, setShowModal] = useState(false);
     const [theme, setTheme] = useState("#d87093");
 
-    console.log(showModal);
-
     return (
         <>
             <ModalPop

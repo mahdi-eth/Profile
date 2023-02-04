@@ -179,6 +179,7 @@
 /* responsive */
 
 @media (min-width: 1200px) {
+
   .main-container {
     max-height: 50rem;
   }
@@ -188,17 +189,31 @@
   .sub-container {
     margin: -10rem -1rem -10rem 10rem;
   }
+
+  .inputs {
+    max-height: 4rem;
+  }
 }
 
 @media (max-width: 1250px) {
   .sub-container {
     margin: -10rem -1rem -15rem 5rem;
   }
+
+  .inputs {
+    max-height: 4rem;
+  }
 }
 
-@media (max-width: 1200px) {
-  .main-container {
+@media (max-width: 1199px) {
+
+  .main-container,
+  .modal-page {
     height: 80rem;
+  }
+
+  .inputs {
+    max-height: 31rem;
   }
 
   .sub-container {
@@ -237,8 +252,14 @@
 }
 
 @media (max-width: 938px) {
-  .main-container {
+
+  .main-container,
+  .modal-page {
     height: 70rem;
+  }
+
+  .inputs {
+    max-height: 25rem;
   }
 
   .line::before {
@@ -268,8 +289,14 @@
 }
 
 @media (max-width: 754px) {
-  .main-container {
+
+  .main-container,
+  .modal-page {
     height: 70rem;
+  }
+
+  .inputs {
+    max-height: 21rem;
   }
 
   .line::before {
@@ -303,8 +330,13 @@
     margin: 0;
   }
 
-  .main-container {
+  .main-container,
+  .modal-page {
     height: 90rem;
+  }
+
+  .inputs {
+    max-height: 34rem;
   }
 
   .sub-container {
@@ -348,8 +380,18 @@
 }
 
 @media (max-width: 460px) {
-  .main-container {
+
+  .main-container,
+  .modal-page {
     height: 70rem;
+  }
+
+  .inputs {
+    max-height: 28rem;
+  }
+
+  .choose-prefers {
+    font-size: 2.2rem;
   }
 
   .comp-logo {
@@ -367,9 +409,20 @@
   }
 }
 
+@media (max-width: 455px) {
+  .inputs {
+    max-height: 24rem;
+  }
+}
+
 @media (max-width: 372px) {
-  .main-container {
+  .main-container,
+  .modal-page {
     height: 60rem;
+  }
+
+  .inputs {
+    max-height: 19rem;
   }
 
   .user {
