@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 // import { HexColorPicker } from "react-colorful";
 import { Radio } from "pretty-checkbox-react";
 import profile1 from "../../assets/img/man1.webp";
@@ -6,29 +6,32 @@ import profile2 from "../../assets/img/man2.webp";
 import profile3 from "../../assets/img/man3.webp";
 import profile4 from "../../assets/img/woman1.jpg";
 import profile5 from "../../assets/img/woman2.jpg";
+import axios from "axios";
 import "./index.css";
 
 const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
-    const [popOverPicker, setPopOverPicker] = useState(false);
-    const [tempTheme, setTempTheme] = useState("");
-    const [saved, setSave] = useState(false);
-
-    if (saved) setTheme(tempTheme);
+    const [tempTheme, settemptheme] = useState("");
 
     const hideModal = (e) => {
-        if (e.target.className.includes("activated-modal") && !popOverPicker) {
+        if (e.target.className.includes("activated-modal")) {
             setShowModal(false);
         }
     };
 
-    const [userData, setUserDate] = useState({
+    const userData = {
         username: "",
         phoneNumber: "",
         email: "",
         website: "",
         address: "",
-        picture: ""
-    });
+        picture: "",
+        color: ""
+    };
+
+    const fetchData = () => {
+        axios.post("http://localhost:3000/api/save-user", userData);
+        setShowModal(False);
+    };
 
     return (
         <div
@@ -42,7 +45,9 @@ const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
                     <div>
                         <p className="theme-color-text">Theme Color</p>
                         <input
-                            onChange={(e) => setTempTheme(e.target.value)}
+                            onChange={(e) => {
+                                userData.color = e.target.value;
+                            }}
                             defaultValue={theme}
                             type="color"
                         />
@@ -175,12 +180,9 @@ const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
                                 />
                             </figure>
                             <button
-                                onClick={() => {
-                                    console.log(userData, tempTheme);
-                                    setSave(true);
-                                }}
+                                onClick={fetchData}
                                 style={{ background: theme }}
-                                type="submit"
+                                type="button"
                                 className="save-btn">
                                 Save
                             </button>

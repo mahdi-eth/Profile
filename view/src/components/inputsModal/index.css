@@ -8,10 +8,6 @@
     z-index: 2;
 }
 
-.activated-modal {
-    top: 0%;
-}
-
 .modal-container {
     width: 80%;
     height: 60%;
@@ -34,6 +30,7 @@
 
 .theme-color-text {
     font-size: 1.4rem;
+    display: block;
     color: #33333390;
 }
 
