@@ -13,6 +13,8 @@ const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
     const [tempTheme, setTempTheme] = useState("");
     const [saved, setSave] = useState(false);
 
+    if (saved) setTheme(tempTheme);
+
     const hideModal = (e) => {
         if (e.target.className.includes("activated-modal") && !popOverPicker) {
             setShowModal(false);
@@ -173,7 +175,10 @@ const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
                                 />
                             </figure>
                             <button
-                                onClick={() => console.log(userData, tempTheme)}
+                                onClick={() => {
+                                    console.log(userData, tempTheme);
+                                    setSave(true);
+                                }}
                                 style={{ background: theme }}
                                 type="submit"
                                 className="save-btn">
