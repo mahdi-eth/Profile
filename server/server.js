@@ -7,8 +7,8 @@ const cors = require('cors');
 server.use(cors());
 server.use(express.json({ extended: false }))
 
-server.post("/api/save-user", () => console.log("OK"));
+// Handling requests
 
-server.get("/api/save-user", (req,res) => res.json({test: "test"}))
+server.use("/api", require("./routes").saveUserRoute);
 
 server.listen(3000, () => console.log("Server runnin'"));
