@@ -22,6 +22,7 @@
     left: 10%;
     top: 20%;
     padding: 1rem;
+    overflow-y: scroll;
 }
 
 .choose-prefers {
@@ -67,9 +68,9 @@
 .inputs {
     width: 100%;
     gap: 1rem;
-    max-height: 22vh;
-    overflow: scroll;
+    /* overflow-y: scroll; */
     margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .inputs > * {
@@ -78,6 +79,7 @@
     padding: .5rem;
     border-radius: .5rem;
     border: .05rem solid;
+    scrollbar-width: 0;
 }
 
 .img-container {
@@ -97,8 +99,8 @@
 }
 
 .save-btn {
-    margin-top: 1rem;
     text-align: center;
+    margin-top: 1.5rem;
     color: #fafafa;
     border-radius: 0.85rem;
     font-weight: 600;
@@ -106,6 +108,4 @@
     width: calc(100% - 2rem) ;
     padding: .5rem;
     cursor: pointer;
-    bottom: 1rem;
-    position: absolute;
 }

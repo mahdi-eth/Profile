@@ -39,10 +39,7 @@ const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
             className={
                 showModal ? "activated-modal " + "modal-page" : "modal-page"
             }>
-            <div
-                className={
-                    "modal-container display-flex flex-coloumn"
-                }>
+            <div className={"modal-container display-flex flex-coloumn"}>
                 <p className="choose-prefers">Choose Your Prefers</p>
                 <div className="user-form-container display-flex flex-coloumn">
                     <div>
@@ -66,30 +63,45 @@ const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
                     <form className="inputs display-flex flex-coloumn">
                         <input
                             style={{ borderColor: theme + "80" }}
+                            onChange={(e) => {
+                                userData.username = e.target.value;
+                            }}
                             placeholder="Username"
                             name="Username"
                             type="text"
                         />
                         <input
                             style={{ borderColor: theme + "80" }}
+                            onChange={(e) => {
+                                userData.phoneNumber = e.target.value;
+                            }}
                             placeholder="Phone number"
                             name="Phone number"
                             type="text"
                         />
                         <input
                             style={{ borderColor: theme + "80" }}
+                            onChange={(e) => {
+                                userData.email = e.target.value;
+                            }}
                             placeholder="Email"
                             name="Email"
                             type="email"
                         />
                         <input
                             style={{ borderColor: theme + "80" }}
+                            onChange={(e) => {
+                                userData.website = e.target.value;
+                            }}
                             placeholder="Website"
                             name="Website"
                             type="text"
                         />
                         <input
                             style={{ borderColor: theme + "80" }}
+                            onChange={(e) => {
+                                userData.address = e.target.value;
+                            }}
                             placeholder="Address"
                             name="Address"
                             type="text"
@@ -105,6 +117,10 @@ const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
                                     name="pic"
                                     shape="round"
                                     color="primary"
+                                    onChange={(e) =>
+                                        (userData.picture =
+                                            e.target.parentElement.parentElement.children[0].src)
+                                    }
                                 />
                             </figure>
                             <figure className="display-flex">
@@ -117,6 +133,10 @@ const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
                                     name="pic"
                                     shape="round"
                                     color="primary"
+                                    onChange={(e) =>
+                                        (userData.picture =
+                                            e.target.parentElement.parentElement.children[0].src)
+                                    }
                                 />
                             </figure>
                             <figure className="display-flex">
@@ -129,6 +149,10 @@ const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
                                     name="pic"
                                     shape="round"
                                     color="primary"
+                                    onChange={(e) =>
+                                        (userData.picture =
+                                            e.target.parentElement.parentElement.children[0].src)
+                                    }
                                 />
                             </figure>
                             <figure className="display-flex">
@@ -141,6 +165,10 @@ const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
                                     name="pic"
                                     shape="round"
                                     color="primary"
+                                    onChange={(e) =>
+                                        (userData.picture =
+                                            e.target.parentElement.parentElement.children[0].src)
+                                    }
                                 />
                             </figure>
                             <figure className="display-flex">
@@ -153,17 +181,21 @@ const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
                                     name="pic"
                                     shape="round"
                                     color="primary"
+                                    onChange={(e) =>
+                                        (userData.picture =
+                                            e.target.parentElement.parentElement.children[0].src)
+                                    }
                                 />
                             </figure>
+                        <button
+                            onSubmit={() => fetch()}
+                            style={{ background: theme }}
+                            type="submit"
+                            className="save-btn">
+                            Save
+                        </button>
                         </div>
                     </form>
-                    <button
-                        onSubmit={() => fetch()}
-                        style={{ background: theme }}
-                        type="submit"
-                        className="save-btn">
-                        Save
-                    </button>
                 </div>
             </div>
         </div>
