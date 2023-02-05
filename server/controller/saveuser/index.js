@@ -1,3 +1,5 @@
+const { User } = require("../../model/user");
+
 const controllSavingUser = (req, res) => {
     const username = req.body.username;
     const phoneNumber = req.body.phoneNumber;
@@ -6,7 +8,19 @@ const controllSavingUser = (req, res) => {
     const address = req.body.address;
     const picture = req.body.picture;
     const color = req.body.color;
-    console.log(req.body);
+
+    const user = new User({
+        username,
+        phoneNumber,
+        email,
+        website,
+        address,
+        picture,
+        color
+    });
+    user.save().then(() => console.log("user saved!"));
+
+    return res.status(201).json({ message: "New information saved!" });
 };
 
 module.exports = { controllSavingUser };

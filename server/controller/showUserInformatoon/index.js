@@ -1,0 +1,3 @@
+const showUserInformation = (req, res) => {
+    
+}
