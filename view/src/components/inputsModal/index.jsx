@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { HexColorPicker } from "react-colorful";
+// import { HexColorPicker } from "react-colorful";
 import { Radio } from "pretty-checkbox-react";
 import profile1 from "../../assets/img/man1.webp";
 import profile2 from "../../assets/img/man2.webp";
@@ -10,17 +10,12 @@ import "./index.css";
 
 const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
     const [popOverPicker, setPopOverPicker] = useState(false);
+    const [tempTheme, setTempTheme] = useState("");
+    const [saved, setSave] = useState(false);
 
     const hideModal = (e) => {
         if (e.target.className.includes("activated-modal") && !popOverPicker) {
             setShowModal(false);
-        }
-        if (
-            !e.target.className.includes("hex-color-changer") &&
-            !e.target.className.includes("react-colorful") &&
-            popOverPicker
-        ) {
-            setPopOverPicker(false);
         }
     };
 
@@ -44,21 +39,11 @@ const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
                 <div className="user-form-container display-flex flex-coloumn">
                     <div>
                         <p className="theme-color-text">Theme Color</p>
-                        <button
-                            className="theme-color"
-                            style={{ background: theme }}
-                            onClick={() => {
-                                setPopOverPicker(!popOverPicker);
-                            }}
+                        <input
+                            onChange={(e) => setTempTheme(e.target.value)}
+                            defaultValue={theme}
+                            type="color"
                         />
-                        {popOverPicker && (
-                            <div className="hex-color-changer">
-                                <HexColorPicker
-                                    color={theme}
-                                    onChange={setTheme}
-                                />
-                            </div>
-                        )}
                     </div>
                     <form className="inputs display-flex flex-coloumn">
                         <input
@@ -187,13 +172,13 @@ const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
                                     }
                                 />
                             </figure>
-                        <button
-                            onSubmit={() => fetch()}
-                            style={{ background: theme }}
-                            type="submit"
-                            className="save-btn">
-                            Save
-                        </button>
+                            <button
+                                onClick={() => console.log(userData, tempTheme)}
+                                style={{ background: theme }}
+                                type="submit"
+                                className="save-btn">
+                                Save
+                            </button>
                         </div>
                     </form>
                 </div>

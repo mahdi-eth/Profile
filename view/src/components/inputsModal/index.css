@@ -37,29 +37,6 @@
     color: #33333390;
 }
 
-.theme-color {
-    padding: .75rem 1.5rem;
-    cursor: pointer;
-    margin-left: .25rem;
-    border: none;
-    position: relative;
-}
-.theme-color:after {
-    content: '';
-    position: absolute;
-    top: -.25rem;
-    left: -.25rem;
-    right: -.25rem;
-    bottom: -.25rem;
-    border-radius: .25rem;
-    border: .05rem solid #333;
-  }
-
-.hex-color-changer {
-    position: absolute;
-    bottom: 3rem;
-}
-
 .user-form-container {
     width: 100%;
     align-items: flex-start;
@@ -68,12 +45,11 @@
 .inputs {
     width: 100%;
     gap: 1rem;
-    /* overflow-y: scroll; */
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
 }
 
-.inputs > * {
+.inputs>* {
     width: 100%;
     font-size: 1.2rem;
     padding: .5rem;
@@ -88,14 +64,18 @@
     gap: 1rem;
 }
 
-.img-container > figure {
+.img-container>figure {
     align-items: flex-end;
 }
 
-.img-container > figure > img {
+.img-container>figure>img {
     width: 8.8rem;
     height: 8.8rem;
     border-radius: 50%;
+}
+
+input[type="radio"] {
+    cursor: pointer;
 }
 
 .save-btn {
@@ -105,7 +85,7 @@
     border-radius: 0.85rem;
     font-weight: 600;
     border: none;
-    width: calc(100% - 2rem) ;
+    width: calc(100% - 2rem);
     padding: .5rem;
     cursor: pointer;
 }
