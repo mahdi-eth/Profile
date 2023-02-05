@@ -30,7 +30,7 @@ const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
 
     const fetchData = () => {
         axios.post("http://localhost:3000/api/save-user", userData);
-        setShowModal(False);
+        setShowModal(false);
     };
 
     return (
@@ -78,7 +78,7 @@ const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
                             }}
                             placeholder="Email"
                             name="Email"
-                            type="email"
+                            type="text"
                         />
                         <input
                             style={{ borderColor: theme + "80" }}
