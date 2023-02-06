@@ -9,8 +9,7 @@ import profile5 from "../../assets/img/woman2.jpg";
 import axios from "axios";
 import "./index.css";
 
-const ModalPop = ({ showModal, setShowModal, theme }) => {
-
+const ModalPop = ({ showModal, setShowModal, theme, data }) => {
     const hideModal = (e) => {
         if (e.target.className.includes("activated-modal")) {
             setShowModal(false);
@@ -54,6 +53,7 @@ const ModalPop = ({ showModal, setShowModal, theme }) => {
                     <form className="inputs display-flex flex-coloumn">
                         <input
                             style={{ borderColor: theme + "80" }}
+                            defaultValue={data?.username}
                             onChange={(e) => {
                                 userData.username = e.target.value;
                             }}
@@ -63,6 +63,7 @@ const ModalPop = ({ showModal, setShowModal, theme }) => {
                         />
                         <input
                             style={{ borderColor: theme + "80" }}
+                            defaultValue={data?.phoneNumber}
                             onChange={(e) => {
                                 userData.phoneNumber = e.target.value;
                             }}
@@ -72,6 +73,7 @@ const ModalPop = ({ showModal, setShowModal, theme }) => {
                         />
                         <input
                             style={{ borderColor: theme + "80" }}
+                            defaultValue={data?.email}
                             onChange={(e) => {
                                 userData.email = e.target.value;
                             }}
@@ -81,6 +83,7 @@ const ModalPop = ({ showModal, setShowModal, theme }) => {
                         />
                         <input
                             style={{ borderColor: theme + "80" }}
+                            defaultValue={data?.website}
                             onChange={(e) => {
                                 userData.website = e.target.value;
                             }}
@@ -90,6 +93,7 @@ const ModalPop = ({ showModal, setShowModal, theme }) => {
                         />
                         <input
                             style={{ borderColor: theme + "80" }}
+                            defaultValue={data?.address}
                             onChange={(e) => {
                                 userData.address = e.target.value;
                             }}
@@ -108,6 +112,7 @@ const ModalPop = ({ showModal, setShowModal, theme }) => {
                                     name="pic"
                                     shape="round"
                                     color="primary"
+                                    onLoad={() => console.log("I am")}
                                     onChange={(e) =>
                                         (userData.picture =
                                             e.target.parentElement.parentElement.children[0].src)
@@ -124,6 +129,7 @@ const ModalPop = ({ showModal, setShowModal, theme }) => {
                                     name="pic"
                                     shape="round"
                                     color="primary"
+                                    onLoad={() => console.log("I am")}
                                     onChange={(e) =>
                                         (userData.picture =
                                             e.target.parentElement.parentElement.children[0].src)
@@ -140,6 +146,7 @@ const ModalPop = ({ showModal, setShowModal, theme }) => {
                                     name="pic"
                                     shape="round"
                                     color="primary"
+                                    onLoad={() => console.log("I am")}
                                     onChange={(e) =>
                                         (userData.picture =
                                             e.target.parentElement.parentElement.children[0].src)
@@ -156,6 +163,7 @@ const ModalPop = ({ showModal, setShowModal, theme }) => {
                                     name="pic"
                                     shape="round"
                                     color="primary"
+                                    onLoad={() => console.log("I am")}
                                     onChange={(e) =>
                                         (userData.picture =
                                             e.target.parentElement.parentElement.children[0].src)
@@ -172,6 +180,7 @@ const ModalPop = ({ showModal, setShowModal, theme }) => {
                                     name="pic"
                                     shape="round"
                                     color="primary"
+                                    onLoad={() => console.log("I am")}
                                     onChange={(e) =>
                                         (userData.picture =
                                             e.target.parentElement.parentElement.children[0].src)

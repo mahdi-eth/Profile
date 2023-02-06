@@ -47,61 +47,6 @@
   z-index: 1;
 }
 
-/* .line::before {
-  content: "";
-  padding: 4rem 0;
-  background: red;
-  width: 150%;
-  rotate: 45deg;
-  position: relative;
-  left: 24rem;
-  display: block;
-}
-
-.line::after {
-  content: "";
-  padding: 6rem 0;
-  background: rgb(216, 112, 147);
-  width: 150%;
-  rotate: 45deg;
-  position: relative;
-  right: 54rem;
-  display: block;
-}
-
-.sec-line::before {
-  content: "";
-  padding: 4rem 0;
-  background: rgb(71, 71, 71);
-  width: 150%;
-  rotate: 45deg;
-  position: relative;
-  left: 23rem;
-  display: block;
-}
-
-.sec-line::after {
-  content: "";
-  padding: 8rem 0;
-  background: rgb(71, 71, 71);
-  width: 150%;
-  rotate: 45deg;
-  position: relative;
-  right: 55rem;
-  display: block;
-}
-
-.third-line::after {
-  content: "";
-  padding: 8rem 0;
-  background: rgb(216, 112, 147);
-  width: 150%;
-  rotate: 45deg;
-  position: relative;
-  right: 55rem;
-  display: block;
-} */
-
 .sub-container {
   position: fixed;
   z-index: 1;

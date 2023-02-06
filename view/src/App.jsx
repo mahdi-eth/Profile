@@ -20,18 +20,18 @@ function App() {
                 const hasGotData = res.data;
                 setData(hasGotData);
             })
-            .catch((err) => console.log(err));
     };
 
     useEffect(() => {
         getData();
-    }, []);
+    }, [showModal]);
+    // ++ shoModal change 
 
     const Line = styled.div`
         &::before {
             content: "";
             padding: 4rem 0;
-            background: rgb(216, 112, 147);
+            background: ${(props) => props.theme};
             width: 150%;
             rotate: 45deg;
             position: relative;
@@ -41,7 +41,7 @@ function App() {
         &::after {
             content: "";
             padding: 6rem 0;
-            background: rgb(216, 112, 147);
+            background: ${(props) => props.theme};
             width: 150%;
             rotate: 45deg;
             position: relative;
@@ -77,7 +77,7 @@ function App() {
         &::after {
             content: "";
             padding: 8rem 0;
-            background: rgb(216, 112, 147);
+            background: ${(props) => props.theme};
             width: 150%;
             rotate: 45deg;
             position: relative;
@@ -92,10 +92,13 @@ function App() {
                 showModal={showModal}
                 setShowModal={setShowModal}
                 theme={data?.userData?.color}
+                data={data?.userData}
             />
-            <Line className="main-container line">
-                <SecLine className="sec-line">
-                    <ThirdLine className="third-line">
+            <Line theme={data?.userData?.color} className="main-container line">
+                <SecLine theme={data?.userData?.color} className="sec-line">
+                    <ThirdLine
+                        theme={data?.userData?.color}
+                        className="third-line">
                         <div className="contaion display-flex justify-content-center">
                             <div className="sub-container display-flex justify-content-center align-items-center">
                                 <div className="profile-holder display-flex align-items-center flex-coloumn special-m">
