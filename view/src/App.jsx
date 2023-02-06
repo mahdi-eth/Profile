@@ -11,13 +11,14 @@ import axios from "axios";
 function App() {
     const [showModal, setShowModal] = useState(false);
     const [theme, setTheme] = useState("#d87093");
+    const [data, setData] = useState(null)
 
     const getData = () => {
         axios
             .get("http://localhost:3000")
             .then((res) => {
-                const mainData = res.data;
-                console.log(mainData);
+                const hasGotData = res.data;
+                setData(hasGotData)
             })
             .catch((err) => console.log(err));
     };

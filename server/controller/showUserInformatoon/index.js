@@ -3,7 +3,7 @@ const { User } = require("../../model/user/index");
 
 const showUserInformation = (_, res) => {
     User.find().then((data) => {
-        res.json({ test: data[0] });
+        res.json({ userData: data[0] });
     });
 };
 
