@@ -1,5 +1,4 @@
 import compLogo from "./assets/img/compLogo.jpg";
-import tempProfilePic from "./assets/img/man1.webp";
 import phoneSVG from "./assets/icons/phone.svg";
 import mailSVG from "./assets/icons/mail.svg";
 import webSVG from "./assets/icons/web.svg";
@@ -23,7 +22,6 @@ function App() {
     useEffect(() => {
         getData();
     }, [showModal]);
-    // ++ shoModal change
 
     const Line = styled.div`
         &::before {
@@ -105,9 +103,10 @@ function App() {
                                         style={{
                                             border:
                                                 ".2rem solid" +
-                                                data?.userData?.color + "90",
-                                                borderTopColor: "transparent",
-                                                borderRightColor: "transparent",
+                                                data?.userData?.color +
+                                                "90",
+                                            borderTopColor: "transparent",
+                                            borderRightColor: "transparent"
                                         }}
                                         src={data?.userData?.picture}
                                         alt="Profile picture"
@@ -147,7 +146,9 @@ function App() {
                                     </div>
                                 </div>
                                 <button
-                                style={{ background: data?.userData?.color }}
+                                    style={{
+                                        background: data?.userData?.color
+                                    }}
                                     onClick={() => setShowModal(true)}
                                     className="my-inputs z-index">
                                     My Inputs

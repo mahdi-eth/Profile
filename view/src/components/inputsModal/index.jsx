@@ -27,8 +27,9 @@ const ModalPop = ({ showModal, setShowModal, theme, data }) => {
     };
 
     const fetchData = () => {
-        axios.post("http://localhost:3000/api/save-user", userData);
-        setShowModal(false);
+        axios.post("http://localhost:3000/api/save-user", userData).then(() => {
+            setShowModal(false);
+        });
     };
 
     return (
@@ -112,7 +113,6 @@ const ModalPop = ({ showModal, setShowModal, theme, data }) => {
                                     name="pic"
                                     shape="round"
                                     color="primary"
-                                    onLoad={() => console.log("I am")}
                                     onChange={(e) =>
                                         (userData.picture =
                                             e.target.parentElement.parentElement.children[0].src)
@@ -129,7 +129,6 @@ const ModalPop = ({ showModal, setShowModal, theme, data }) => {
                                     name="pic"
                                     shape="round"
                                     color="primary"
-                                    onLoad={() => console.log("I am")}
                                     onChange={(e) =>
                                         (userData.picture =
                                             e.target.parentElement.parentElement.children[0].src)
@@ -146,7 +145,6 @@ const ModalPop = ({ showModal, setShowModal, theme, data }) => {
                                     name="pic"
                                     shape="round"
                                     color="primary"
-                                    onLoad={() => console.log("I am")}
                                     onChange={(e) =>
                                         (userData.picture =
                                             e.target.parentElement.parentElement.children[0].src)
@@ -163,7 +161,6 @@ const ModalPop = ({ showModal, setShowModal, theme, data }) => {
                                     name="pic"
                                     shape="round"
                                     color="primary"
-                                    onLoad={() => console.log("I am")}
                                     onChange={(e) =>
                                         (userData.picture =
                                             e.target.parentElement.parentElement.children[0].src)
@@ -180,7 +177,6 @@ const ModalPop = ({ showModal, setShowModal, theme, data }) => {
                                     name="pic"
                                     shape="round"
                                     color="primary"
-                                    onLoad={() => console.log("I am")}
                                     onChange={(e) =>
                                         (userData.picture =
                                             e.target.parentElement.parentElement.children[0].src)
