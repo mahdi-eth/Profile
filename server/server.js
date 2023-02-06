@@ -14,6 +14,6 @@ mongoose
 // Handling requests
 
 server.use("/api", require("./routes").saveUserRoute);
-server.get("", );
+server.get("/", require("./controller/showUserInformatoon").showUserInformation);
 
 server.listen(3000, () => console.log("Server runnin'"));

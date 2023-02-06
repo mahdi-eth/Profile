@@ -4,12 +4,27 @@ import phoneSVG from "./assets/icons/phone.svg";
 import mailSVG from "./assets/icons/mail.svg";
 import webSVG from "./assets/icons/web.svg";
 import locSVG from "./assets/icons/loc.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ModalPop from "./components/inputsModal";
+import axios from "axios";
 
 function App() {
     const [showModal, setShowModal] = useState(false);
     const [theme, setTheme] = useState("#d87093");
+
+    const getData = () => {
+        axios
+            .get("http://localhost:3000")
+            .then((res) => {
+                const mainData = res.data;
+                console.log(mainData);
+            })
+            .catch((err) => console.log(err));
+    };
+
+    useEffect(() => {
+        getData();
+   }, []);
 
     return (
         <>
