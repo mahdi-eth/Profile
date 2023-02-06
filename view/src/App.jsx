@@ -27,67 +27,64 @@ function App() {
         getData();
     }, []);
 
-    // const div = styled.div`
-    //     height: 100vh;
-    //     overflow: hidden;
-    //     z-index: 1;
-    //     &::before {
-    //         content: "";
-    //         padding: 4rem 0;
-    //         background: rgb(216, 112, 147);
-    //         width: 150%;
-    //         rotate: 45deg;
-    //         position: relative;
-    //         left: 24rem;
-    //         display: block;
-    //     }
-    //     &::after {
-    //         content: "";
-    //         padding: 6rem 0;
-    //         background: rgb(216, 112, 147);
-    //         width: 150%;
-    //         rotate: 45deg;
-    //         position: relative;
-    //         right: 54rem;
-    //         display: block;
-    //     }
-    // `;
+    const Line = styled.div`
+        &::before {
+            content: "";
+            padding: 4rem 0;
+            background: rgb(216, 112, 147);
+            width: 150%;
+            rotate: 45deg;
+            position: relative;
+            left: 24rem;
+            display: block;
+        }
+        &::after {
+            content: "";
+            padding: 6rem 0;
+            background: rgb(216, 112, 147);
+            width: 150%;
+            rotate: 45deg;
+            position: relative;
+            right: 54rem;
+            display: block;
+        }
+    `;
 
-    // const div = styled.div`
-    //     &::before {
-    //         content: "";
-    //         padding: 4rem 0;
-    //         background: rgb(71, 71, 71);
-    //         width: 150%;
-    //         rotate: 45deg;
-    //         position: relative;
-    //         left: 23rem;
-    //         display: block;
-    //     }
-    //     &::after {
-    //         content: "";
-    //         padding: 8rem 0;
-    //         background: rgb(71, 71, 71);
-    //         width: 150%;
-    //         rotate: 45deg;
-    //         position: relative;
-    //         right: 55rem;
-    //         display: block;
-    //     }
-    // `;
+    const SecLine = styled.div`
+        &::before {
+            content: "";
+            padding: 4rem 0;
+            background: rgb(71, 71, 71);
+            width: 150%;
+            rotate: 45deg;
+            position: relative;
+            left: 23rem;
+            display: block;
+        }
+        &::after {
+            content: "";
+            padding: 8rem 0;
+            background: rgb(71, 71, 71);
+            width: 150%;
+            rotate: 45deg;
+            position: relative;
+            right: 55rem;
+            display: block;
+        }
+    `;
 
-    // const div = styled.div`
-    //     &::after {
-    //         content: "";
-    //         padding: 8rem 0;
-    //         background: rgb(216, 112, 147);
-    //         width: 150%;
-    //         rotate: 45deg;
-    //         position: relative;
-    //         right: 55rem;
-    //         display: block;
-    //     }
-    // `;
+    const ThirdLine = styled.div`
+        &::after {
+            content: "";
+            padding: 8rem 0;
+            background: rgb(216, 112, 147);
+            width: 150%;
+            rotate: 45deg;
+            position: relative;
+            right: 55rem;
+            display: block;
+        }
+    `;
 
     return (
         <>
@@ -96,9 +93,9 @@ function App() {
                 setShowModal={setShowModal}
                 theme={data?.userData?.color}
             />
-            <div className="main-container line">
-                <div className="sec-line">
-                    <div className="third-line">
+            <Line className="main-container line">
+                <SecLine className="sec-line">
+                    <ThirdLine className="third-line">
                         <div className="contaion display-flex justify-content-center">
                             <div className="sub-container display-flex justify-content-center align-items-center">
                                 <div className="profile-holder display-flex align-items-center flex-coloumn special-m">
@@ -148,9 +145,9 @@ function App() {
                                 </button>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </ThirdLine>
+                </SecLine>
+            </Line>
         </>
     );
 }
