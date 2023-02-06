@@ -6,34 +6,95 @@ import webSVG from "./assets/icons/web.svg";
 import locSVG from "./assets/icons/loc.svg";
 import { useEffect, useState } from "react";
 import ModalPop from "./components/inputsModal";
+import styled from "styled-components";
 import axios from "axios";
 
 function App() {
     const [showModal, setShowModal] = useState(false);
-    const [theme, setTheme] = useState("#d87093");
-    const [data, setData] = useState(null)
+    const [data, setData] = useState(null);
 
     const getData = () => {
         axios
             .get("http://localhost:3000")
             .then((res) => {
                 const hasGotData = res.data;
-                setData(hasGotData)
+                setData(hasGotData);
             })
             .catch((err) => console.log(err));
     };
 
     useEffect(() => {
         getData();
-   }, []);
+    }, []);
+
+    // const div = styled.div`
+    //     height: 100vh;
+    //     overflow: hidden;
+    //     z-index: 1;
+    //     &::before {
+    //         content: "";
+    //         padding: 4rem 0;
+    //         background: rgb(216, 112, 147);
+    //         width: 150%;
+    //         rotate: 45deg;
+    //         position: relative;
+    //         left: 24rem;
+    //         display: block;
+    //     }
+    //     &::after {
+    //         content: "";
+    //         padding: 6rem 0;
+    //         background: rgb(216, 112, 147);
+    //         width: 150%;
+    //         rotate: 45deg;
+    //         position: relative;
+    //         right: 54rem;
+    //         display: block;
+    //     }
+    // `;
+
+    // const div = styled.div`
+    //     &::before {
+    //         content: "";
+    //         padding: 4rem 0;
+    //         background: rgb(71, 71, 71);
+    //         width: 150%;
+    //         rotate: 45deg;
+    //         position: relative;
+    //         left: 23rem;
+    //         display: block;
+    //     }
+    //     &::after {
+    //         content: "";
+    //         padding: 8rem 0;
+    //         background: rgb(71, 71, 71);
+    //         width: 150%;
+    //         rotate: 45deg;
+    //         position: relative;
+    //         right: 55rem;
+    //         display: block;
+    //     }
+    // `;
+
+    // const div = styled.div`
+    //     &::after {
+    //         content: "";
+    //         padding: 8rem 0;
+    //         background: rgb(216, 112, 147);
+    //         width: 150%;
+    //         rotate: 45deg;
+    //         position: relative;
+    //         right: 55rem;
+    //         display: block;
+    //     }
+    // `;
 
     return (
         <>
             <ModalPop
                 showModal={showModal}
                 setShowModal={setShowModal}
-                theme={theme}
-                setTheme={setTheme}
+                theme={data?.userData?.color}
             />
             <div className="main-container line">
                 <div className="sec-line">
@@ -43,7 +104,7 @@ function App() {
                                 <div className="profile-holder display-flex align-items-center flex-coloumn special-m">
                                     <img
                                         className="user z-index"
-                                        src={tempProfilePic}
+                                        src={data?.userData?.picture}
                                         alt="Profile picture"
                                     />
                                     <img
@@ -55,7 +116,7 @@ function App() {
                                 <div className="form-info display-flex align-items-center flex-coloumn z-index">
                                     <div className="form-info-header display-flex align-items-center flex-coloumn">
                                         <h1 className="heading">
-                                            PHIL Janet anderson
+                                            {data?.userData?.username}
                                         </h1>
                                         <h2 className="sales">
                                             Sales Representative
@@ -64,19 +125,19 @@ function App() {
                                     <div className="form-info-items display-flex flex-coloumn">
                                         <div>
                                             <img src={phoneSVG} alt="phone" />
-                                            +123-456-789
+                                            {data?.userData?.phoneNumber}
                                         </div>
                                         <div>
                                             <img src={mailSVG} alt="mail" />
-                                            Hello@reallygreatsite.com
+                                            {data?.userData?.email}
                                         </div>
                                         <div>
                                             <img src={webSVG} alt="web" />
-                                            www.reallygreatsite.com
+                                            {data?.userData?.website}
                                         </div>
                                         <div className="none-bottom-border">
                                             <img src={locSVG} alt="location" />
-                                            123 AnyWhere st., Any City, st 1234
+                                            {data?.userData?.address}
                                         </div>
                                     </div>
                                 </div>

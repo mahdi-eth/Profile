@@ -9,8 +9,7 @@ import profile5 from "../../assets/img/woman2.jpg";
 import axios from "axios";
 import "./index.css";
 
-const ModalPop = ({ showModal, setShowModal, theme, setTheme }) => {
-    const [tempTheme, settemptheme] = useState("");
+const ModalPop = ({ showModal, setShowModal, theme }) => {
 
     const hideModal = (e) => {
         if (e.target.className.includes("activated-modal")) {

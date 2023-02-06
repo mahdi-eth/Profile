@@ -44,12 +44,14 @@
 .main-container {
   height: 100vh;
   overflow: hidden;
+  z-index: 1;
 }
+
 
 .line::before {
   content: "";
   padding: 4rem 0;
-  background: rgb(216, 112, 147);
+  background: red;
   width: 150%;
   rotate: 45deg;
   position: relative;
