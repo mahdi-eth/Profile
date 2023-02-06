@@ -14,18 +14,16 @@ function App() {
     const [data, setData] = useState(null);
 
     const getData = () => {
-        axios
-            .get("http://localhost:3000")
-            .then((res) => {
-                const hasGotData = res.data;
-                setData(hasGotData);
-            })
+        axios.get("http://localhost:3000").then((res) => {
+            const hasGotData = res.data;
+            setData(hasGotData);
+        });
     };
 
     useEffect(() => {
         getData();
     }, [showModal]);
-    // ++ shoModal change 
+    // ++ shoModal change
 
     const Line = styled.div`
         &::before {
@@ -104,6 +102,13 @@ function App() {
                                 <div className="profile-holder display-flex align-items-center flex-coloumn special-m">
                                     <img
                                         className="user z-index"
+                                        style={{
+                                            border:
+                                                ".2rem solid" +
+                                                data?.userData?.color + "90",
+                                                borderTopColor: "transparent",
+                                                borderRightColor: "transparent",
+                                        }}
                                         src={data?.userData?.picture}
                                         alt="Profile picture"
                                     />
@@ -142,6 +147,7 @@ function App() {
                                     </div>
                                 </div>
                                 <button
+                                style={{ background: data?.userData?.color }}
                                     onClick={() => setShowModal(true)}
                                     className="my-inputs z-index">
                                     My Inputs

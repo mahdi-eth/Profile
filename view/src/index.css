@@ -60,9 +60,6 @@
   width: 22rem;
   height: 22rem;
   border-radius: 50%;
-  border: 0.15rem solid rgb(216, 112, 147);
-  border-top-color: transparent;
-  border-right-color: transparent;
 }
 
 .comp-logo {
