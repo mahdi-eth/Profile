@@ -11,15 +11,14 @@ const controllSavingUser = (req, res) => {
     const color = req.body.color;
 
     User.findOne({}, async (err, res) => {
-        const prevUsername = res.username;
-        const prevPhoneNumber = res.phoneNumber;
-        const prevEmail = res.email;
-        const prevWebsite = res.website;
-        const prevAddress = res.address;
-        const prevPic = res.picture;
-        const prevColor = res.color;
-
         if (res) {
+            const prevUsername = res.username;
+            const prevPhoneNumber = res.phoneNumber;
+            const prevEmail = res.email;
+            const prevWebsite = res.website;
+            const prevAddress = res.address;
+            const prevPic = res.picture;
+            const prevColor = res.color;
             return await User.updateOne(
                 {},
                 {
@@ -32,6 +31,16 @@ const controllSavingUser = (req, res) => {
                     color: color || prevColor
                 }
             );
+        } else {
+            const user = new User({
+                username,
+                phoneNumber,
+                email,
+                website,
+                address,
+                picture,
+                color
+            });
         }
         await user.save();
     });
