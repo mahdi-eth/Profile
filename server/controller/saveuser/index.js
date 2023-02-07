@@ -1,7 +1,6 @@
 const { User } = require("../../model/user");
 
 const controllSavingUser = (req, res) => {
-    const id = req.body._id;
     const username = req.body.username;
     const phoneNumber = req.body.phoneNumber;
     const email = req.body.email;
@@ -41,8 +40,8 @@ const controllSavingUser = (req, res) => {
                 picture,
                 color
             });
+            await user.save();
         }
-        await user.save();
     });
     res.status(200).json({ message: "New information saved!" });
 };

@@ -47,14 +47,16 @@ const ModalPop = ({ showModal, setShowModal, theme, data }) => {
                             onChange={(e) => {
                                 userData.color = e.target.value;
                             }}
-                            defaultValue={theme}
+                            defaultValue={theme || "#ff0000"}
                             type="color"
                         />
                     </div>
                     <form className="inputs display-flex flex-coloumn">
                         <input
-                            style={{ borderColor: theme + "80" }}
-                            defaultValue={data?.username}
+                            style={{ borderColor: theme || "#ff0000" + "80" }}
+                            defaultValue={
+                                data?.username || "PHIL Janet anderson"
+                            }
                             onChange={(e) => {
                                 userData.username = e.target.value;
                             }}
@@ -63,8 +65,10 @@ const ModalPop = ({ showModal, setShowModal, theme, data }) => {
                             type="text"
                         />
                         <input
-                            style={{ borderColor: theme + "80" }}
-                            defaultValue={data?.phoneNumber}
+                            style={{ borderColor: theme || "#ff0000" + "80" }}
+                            defaultValue={
+                                data?.phoneNumber || "+123 - 456 - 789"
+                            }
                             onChange={(e) => {
                                 userData.phoneNumber = e.target.value;
                             }}
@@ -73,8 +77,10 @@ const ModalPop = ({ showModal, setShowModal, theme, data }) => {
                             type="text"
                         />
                         <input
-                            style={{ borderColor: theme + "80" }}
-                            defaultValue={data?.email}
+                            style={{ borderColor: theme || "#ff0000" + "80" }}
+                            defaultValue={
+                                data?.email || "Hello@reallygreatsite.com"
+                            }
                             onChange={(e) => {
                                 userData.email = e.target.value;
                             }}
@@ -83,8 +89,10 @@ const ModalPop = ({ showModal, setShowModal, theme, data }) => {
                             type="text"
                         />
                         <input
-                            style={{ borderColor: theme + "80" }}
-                            defaultValue={data?.website}
+                            style={{ borderColor: theme || "#ff0000" + "80" }}
+                            defaultValue={
+                                data?.website || "Hello@reallygreatsite.com"
+                            }
                             onChange={(e) => {
                                 userData.website = e.target.value;
                             }}
@@ -93,8 +101,11 @@ const ModalPop = ({ showModal, setShowModal, theme, data }) => {
                             type="text"
                         />
                         <input
-                            style={{ borderColor: theme + "80" }}
-                            defaultValue={data?.address}
+                            style={{ borderColor: theme || "#ff0000" + "80" }}
+                            defaultValue={
+                                data?.address ||
+                                "123 AnyWhere st., Any City, St 1234"
+                            }
                             onChange={(e) => {
                                 userData.address = e.target.value;
                             }}
@@ -185,7 +196,7 @@ const ModalPop = ({ showModal, setShowModal, theme, data }) => {
                             </figure>
                             <button
                                 onClick={fetchData}
-                                style={{ background: theme }}
+                                style={{ background: theme || "#ff0000" }}
                                 type="button"
                                 className="save-btn">
                                 Save

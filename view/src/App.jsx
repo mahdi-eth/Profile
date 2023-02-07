@@ -136,7 +136,7 @@ function App() {
                                         <div>
                                             <img src={phoneSVG} alt="phone" />
                                             {data?.userData?.phoneNumber ||
-                                                +123 - 456 - 789}
+                                                "+123 - 456 - 789" }
                                         </div>
                                         <div>
                                             <img src={mailSVG} alt="mail" />
